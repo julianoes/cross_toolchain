@@ -52,7 +52,7 @@ if [[ ${HEXAGON_SDK_ROOT} = */Qualcomm/Hexagon_SDK/3.0 ]]; then
 	HOME=`echo ${HEXAGON_SDK_ROOT} | sed -e "s#/Qualcomm/Hexagon_SDK/.*##"`
 fi
 
-read -r -p "${1:-HEXAGON_INSTALL_HOME [${HOME}]} " response
+#read -r -p "${1:-HEXAGON_INSTALL_HOME [${HOME}]} " response
 if [ ! "$response" = "" ]; then
 	HOME=$response
 fi
