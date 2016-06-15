@@ -71,7 +71,7 @@ if [ ! -f ${HEXAGON_SDK_ROOT}/tools/qaic/Ubuntu14/qaic ]; then
 		echo
 		echo "Installing HEXAGON_SDK to ${HEXAGON_SDK_ROOT}"
 		echo "This will take a long time."
-		sh ./downloads/qualcomm_hexagon_sdk_lnx_3_0_eval.bin -DDOWNLOAD_ECLIPSE=false -DDOWNLOAD_ANDROID=false -DDOWNLOAD_TOOLS=true -DUSER_INSTALL_DIR=${HEXAGON_SDK_ROOT} -i silent
+		sh ./downloads/qualcomm_hexagon_sdk_lnx_3_0_eval.bin -i silent -DDOWNLOAD_ECLIPSE=false -DDOWNLOAD_ANDROID=false -DDOWNLOAD_TOOLS=true -DUSER_INSTALL_DIR=${HEXAGON_SDK_ROOT}
 	else
 		echo
 		echo "Put the file qualcomm_hexagon_sdk_lnx_3_0_eval.bin in the downloads directory"
