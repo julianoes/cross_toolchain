@@ -52,10 +52,14 @@ if [[ ${HEXAGON_SDK_ROOT} = */Qualcomm/Hexagon_SDK/3.0 ]]; then
 	HOME=`echo ${HEXAGON_SDK_ROOT} | sed -e "s#/Qualcomm/Hexagon_SDK/.*##"`
 fi
 
-#read -r -p "${1:-HEXAGON_INSTALL_HOME [${HOME}]} " response
-if [ ! "$response" = "" ]; then
-	HOME=$response
+# We can't use read inside docker.
+if [ ! -f /.dockerenv ]; then
+    read -r -p "${1:-HEXAGON_INSTALL_HOME [${HOME}]} " response
+    if [ ! "$response" = "" ]; then
+        HOME=$response
+    fi
 fi
+
 
 HEXAGON_SDK_ROOT=${HOME}/Qualcomm/Hexagon_SDK/3.0
 HEXAGON_TOOLS_ROOT=${HOME}/Qualcomm/HEXAGON_Tools/7.2.12/Tools
